@@ -1,0 +1,39 @@
+.main-box {
+    display: flex;
+    height: 80%;
+}
+
+.main-part-box {
+    display: flex;
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    border: 1px solid silver;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.main-part {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    position: relative;
+    border: 1px solid gray;
+    margin-left: -1px;
+    font-size: 3rem;
+    font-weight: bold;
+
+    max-height: 100%;
+    overflow: auto;
+}
+
+.container {
+    width: 100%;
+    padding: 0 2rem;
+}

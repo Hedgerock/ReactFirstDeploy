@@ -1,0 +1,21 @@
+.menu-el {
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 2.5rem;
+    padding: .6rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    margin: 0 .6rem;
+
+    transition: all .3s;
+}
+
+.menu-el:hover {
+    background: #d0ebdb;
+}
+
+.menu-el__link {
+    color: black;
+    width: 100%;
+}

@@ -1,0 +1,19 @@
+.employer-item__number {
+    font-size: .8rem;
+}
+
+.employer-item__btn{
+    color: black;
+    margin: 0;
+
+    border: none;
+    transition: background .3s;
+}
+
+.employer-item__btn:hover {
+    background: silver;
+}
+
+.employer-item__btn:disabled {
+    pointer-events: none;
+}

@@ -1,0 +1,10 @@
+.employer-item__info-block{
+    display: flex;
+    gap: 10px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* .employer-item__info{}
+.employer-item__info_name{}
+.employer-item__info_surname{} */

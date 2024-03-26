@@ -1,0 +1,13 @@
+.language-box {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.language-box span {
+    color: silver;
+}
+
+.language-box__link {
+    color: white;
+}

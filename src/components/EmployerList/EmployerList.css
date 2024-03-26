@@ -1,0 +1,19 @@
+/* .employer-list-app {}
+
+.employer-list-block{}
+ */
+.employer-list-count {
+  margin-bottom: 20px;
+}
+
+.employer-list-count span {
+  font-weight: bold;
+}
+
+.employer-list{ 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  padding-bottom: 10px;
+}

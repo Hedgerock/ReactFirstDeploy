@@ -1,0 +1,13 @@
+.close-btn {
+    height: 24px;
+    border: none;
+    margin: 0;
+    padding: 0 .5rem;
+
+    transition: all .3s;
+}
+
+.close-btn:hover {
+    color: #e23e3e;
+    background: silver;
+}

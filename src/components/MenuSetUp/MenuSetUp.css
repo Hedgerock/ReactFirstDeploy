@@ -1,0 +1,19 @@
+.menu-setup, .menu-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+}
+
+.menu-box {
+    width: 320px;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid silver;
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+
+    gap: 2.5rem;
+}

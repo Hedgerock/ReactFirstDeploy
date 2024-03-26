@@ -1,0 +1,16 @@
+.employer-item__action-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+
+    gap: 3rem;
+    transition: all .3s;
+    opacity: 0;
+
+}
+
+.employer-item:hover .employer-item__action-block {
+    opacity: 1;
+}

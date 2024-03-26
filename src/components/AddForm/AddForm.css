@@ -1,0 +1,31 @@
+.employer-add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    display: flex;
+    gap: 1rem;
+}
+.employer-add-form__input{
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: .6rem;
+}
+.employer-add-form__btn{
+    border-radius: .6rem;
+
+    color: black;
+    padding: 5px;
+
+    width: 20%;
+
+    transition: all .3s;
+}
+
+.employer-add-form__btn:hover {
+    color: white;
+    background: gray;
+}

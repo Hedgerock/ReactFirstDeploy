@@ -1,0 +1,60 @@
+.employer-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    padding: 10px;
+    border: 1px solid silver;
+  
+    gap: 20px;
+
+    position: relative;
+
+    transition: all .3s;
+
+    height: 87px;
+}
+
+.employer-item_deactivated {
+    background: gray;
+}
+
+.employer-item_deactivated::before {
+    content: 'Employee deactivated';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font-size: 1rem;
+    color: rgb(99, 53, 53);
+    font-weight: bold;
+
+    transform: translate(-50%, -50%) rotate(25deg);
+}
+
+.stamp {
+    width: 75px;
+    height: 75px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+
+    transform: translate(-50%, -50%);
+}
+
+.stamp img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+}
+
+.employer-item_deactivated *:not(.employer-label, .employer-label__text, .employer-label__checkbox, .employer-item__action-block) {
+    opacity: .7;
+}
+  
+/* .employer-item__btn_edit {}
+.employer-item__btn_del {} */
