@@ -20,12 +20,70 @@
     color: black;
     padding: 5px;
 
-    width: 20%;
+    width: 10%;
 
     transition: all .3s;
+
+    align-self: flex-end;
 }
 
 .employer-add-form__btn:hover {
     color: white;
     background: gray;
+}
+
+.new-user {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    width: 100%;
+    height: 585px;
+
+    background: silver;
+
+    padding: 1rem;
+}
+
+.new-user span {
+    font-size: 1rem;
+}
+
+.new-user-label {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    width: 45%;
+}
+
+.employer-add-form__input {
+    background: #584646;
+    color: white;
+
+    cursor: default;
+}
+
+.employer-add-form__input_middleName,
+.employer-add-form__input_email {
+    background: gray;
+}
+
+.new-user-label input::placeholder {
+    color: white;
+}
+
+.new-user-label_picture {
+    display: none;
+}
+
+.new-user button {
+    color: white;
+    background: #584646;
+    border-radius: .5rem;
+
+    min-width: 75px;
 }

@@ -1,0 +1,121 @@
+.expand-info {
+    width: 100%;
+    height: 100%;
+
+    background: silver;
+
+    overflow: hidden;
+
+    font-size: 1.2rem;
+
+    min-height: 480px;
+}
+
+.photo {
+    width: 225px;
+    height: 300px;
+
+    position: relative;
+}
+
+.approved-stamp {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 95px;
+    height: 95px;
+    opacity: .8;
+}
+
+.approved-stamp::before {
+    content: 'Approved: ' attr(data-info);
+    position: absolute;
+    opacity: .9;
+    transform: rotate(35deg);
+    bottom: 25px;
+    right: -15px;
+
+    color: #b96dfb;
+    font-weight: 900;
+}
+
+.approved-stamp__src {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo__src {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.running-title {
+    border-bottom: 1px solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+.full-name {
+    display: flex;
+    gap: 1rem;
+}
+
+.full-name span {
+    padding: .6rem;
+    border: 1px solid;
+    border-radius: .4rem;
+}
+
+.expand-info-header-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.employees-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 40%;
+}
+
+.employees-info__value {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.employees-info span {
+    font-weight: normal;
+
+    width: 250px;
+}
+
+.employees-info h4 {
+    text-decoration: underline;
+}
+
+.email-box {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.email-box span {
+    padding-left: 1.5rem;
+}

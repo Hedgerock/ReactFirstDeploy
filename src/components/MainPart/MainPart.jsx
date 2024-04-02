@@ -3,9 +3,13 @@ import { EmployerList } from '../EmployerList';
 import { useEffect, useState } from 'react';
 import employees from '../../employees';
 import { Statistic } from '../Statistic';
+import { getNewid } from '../../utils/getNewId';
 
 export const MainPart = () => {
-    const [employerList, setEmpList] = useState(employees)
+    const updatedList = JSON.parse(localStorage.getItem('employees'));
+    const [employerList, setEmpList] = useState(updatedList || employees)
+    const [newUser, setNewUser] = useState(false);
+    const [ expandInfo, setExpandInfo] = useState(false);
     
     const addEmployer = (employer) => {
         employer.id = getNewid(employerList);
@@ -13,7 +17,8 @@ export const MainPart = () => {
     }
 
     useEffect(() => {
-        console.log(employerList);
+        const updatedList = JSON.stringify(employerList)
+        localStorage.setItem('employees', updatedList)
     }, [employerList]);
     
 
@@ -48,16 +53,23 @@ export const MainPart = () => {
         <div className="main-box">
             <div className="main-part-box container1536">
                 <div className="navigation">Navigation</div>
-                <div className="main-part">
+                <div className={ `main-part  ${ newUser ? 'main-part_modified' : '' }` }>
                     <div className="container">
                         <div className="employer-list-app">
-                            <Statistic addEmployer = { addEmployer } data = { employerList } />
+                            <Statistic 
+                                addEmployer = { addEmployer } 
+                                data = { employerList } 
+                                setNewUser = { setNewUser } 
+                                newUser = { newUser }
+                                setExpandInfo = { setExpandInfo }
+                            />
                             <div className="employer-list-block">
                                 <EmployerList 
                                     data={ employerList } 
                                     deleteEmployer = { deleteEmployer }
                                     editEmployer = { editEmployer }
                                     changeEmployeeStatus = { changeEmployeeStatus }
+                                    expandInfoUseState = { { expandInfo, setExpandInfo } }
                                 />
                             </div>
                         </div>
@@ -66,14 +78,4 @@ export const MainPart = () => {
             </div>
         </div>
     )
-}
-
-function getNewid(dataArr) {
-    if (dataArr.length === 0) {
-        return 1;
-    }
-
-    const lastId = dataArr[dataArr.length - 1].id
-
-    return lastId + 1
 }

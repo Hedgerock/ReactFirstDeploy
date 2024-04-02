@@ -1,31 +1,52 @@
-import { ChangeInput } from "../ChangeInput"
 import './InfoBlock.css'
+import { InfoBlockElement } from "./InfoBlockElement";
 
 export const InfoBlock = (props) => {
-    const { setNewSurname, newSurname, setNewName, newName, setNewMiddleName, newMiddleName, middleName, changeInfo, surname, name } = props
-    const isMiddleNameAdded = true
+
+    const { changeInfo, data, newValues, newSets} = props;
+    const { newName, newMiddleName, newSurname } = newValues;
+    const { setNewName, setNewMiddleName, setNewSurname } = newSets;
+    const { name, surname, middleName } = data
+
 
     return (
         <div className="employer-item__info-block">
-            { !changeInfo  
-                ? <span className="employer-item__info employer-item__info_surname">{ surname }</span>
-                : <ChangeInput setFunction = { setNewSurname } classForInp = { 'surname' } newValue = { newSurname }/>
-            }
-            { !changeInfo  
-                ? <span className="employer-item__info employer-item__info_name">{ name }</span>
-                : <ChangeInput setFunction = { setNewName } classForInp = { 'name' } newValue = { newName }/>
-            }
+            <InfoBlockElement 
+                params = { 
+                    { 
+                        newSet: setNewSurname, 
+                        newValue: newSurname, 
+                        changeInfo, 
+                        currentClassName: 'surname',
+                        prevValue: surname
+                    } 
+                }
+            />
+            <InfoBlockElement 
+                params = { 
+                    { 
+                        newSet: setNewName, 
+                        newValue: newName, 
+                        changeInfo, 
+                        currentClassName: 'name',
+                        prevValue: name
+                    } 
+                }
+            />
 
-            { (middleName || isMiddleNameAdded) && 
-                !changeInfo
-                    ? <span className="employer-item__info employer-item__info_middle-name">{ middleName }</span> 
-                    : <ChangeInput 
-                        setFunction = { setNewMiddleName } 
-                        classForInp = { 'middle-name' } 
-                        newValue = { newMiddleName } 
-                        placeholder = { 'Middle name' }
-                    />
-            }
+            <InfoBlockElement 
+                params = { 
+                    { 
+                        newSet: setNewMiddleName, 
+                        newValue: newMiddleName, 
+                        changeInfo, 
+                        currentClassName: 'middleName',
+                        prevValue: middleName,
+                        placeholder: 'Middle name(optional)'
+                    } 
+                }
+            />
+
         </div>
     )
 }

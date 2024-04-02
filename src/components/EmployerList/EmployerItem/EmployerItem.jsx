@@ -3,16 +3,26 @@ import './EmployerItem.css';
 import { EmployerLabel } from '../EmployerLabel';
 import { InfoBlock } from '../InfoBlock';
 import { ActionBlock } from '../ActionBlock';
+import { setInputsValues } from './setInputsValues';
 
 export const EmployerItem = (props) => {
-    const { data, number, deleteEmployer, editEmployer, changeEmployeeStatus } = props
-    const { name, middleName, surname, id } = data
+    const { data, functions, number, useStateFunc } = props
+    const { id } = data
+
+    const { deleteEmployer, editEmployer, changeEmployeeStatus } = functions
+    const { setExpandInfo, setCurrentId } = useStateFunc
+
+    const numberVal = number + 1;
 
     const [ newName, setNewName ] = useState('');
     const [ newMiddleName, setNewMiddleName ] = useState('')
     const [ newSurname, setNewSurname ] = useState('');
+
     const [ deactivateUser, setDiactivateUser ] = useState(data.active);
-    const [changeInfo, setchangeInfo] = useState(false)
+    const [ changeInfo, setchangeInfo ] = useState(false);
+
+    const newValues = { newName, newMiddleName, newSurname, changeInfo };
+    const newSets = { setNewName, setNewMiddleName, setNewSurname, editEmployer };
 
     const initDelete = () => {
         deleteEmployer(id);
@@ -23,21 +33,13 @@ export const EmployerItem = (props) => {
         changeEmployeeStatus( id, deactivateUser )
     }
 
+    const initExpandInfo = () => {
+        setExpandInfo(prev => !prev)
+        setCurrentId(id)
+    }
+
     const editHandler = () => {
-        if (changeInfo) {
-            data.name = newName || data.name;
-            data.middleName = newMiddleName;
-            data.surname = newSurname || data.surname;
-
-            editEmployer(id, data.name, data.surname, data.middleName)
-        }
-
-        if (!changeInfo) {
-            setNewName(data.name);
-            setNewMiddleName(data.middleName);
-            setNewSurname(data.surname);
-        }
-
+        setInputsValues({ newValues, newSets, data });
         setchangeInfo(prev => !prev);
     }
 
@@ -58,19 +60,22 @@ export const EmployerItem = (props) => {
                     deactivateUser = { deactivateUser } 
                 />
             }
-            <span className="employer-item__number">{`${number + 1}.`}</span>
+            <span className="employer-item__number">{`${numberVal}.`}</span>
             <InfoBlock 
-                setNewSurname = { setNewSurname }
-                newSurname = { newSurname }
-                setNewName = { setNewName }
-                newName = { newName }
-                setNewMiddleName = { setNewMiddleName }
-                newMiddleName = { newMiddleName }
-                middleName = { middleName }
-                name = { name }
-                surname = { surname }
+                data = { data } 
+                editEmployer = { editEmployer } 
+                newValues = { { newName, newMiddleName, newSurname } }
+                newSets = { { setNewName, setNewSurname, setNewMiddleName } }
                 changeInfo = { changeInfo }
             />
+            <button 
+                onClick={ initExpandInfo }
+                className='expand-info-btn' 
+                title='Show more' 
+                disabled = { !deactivateUser }
+            >
+                <i className="fa-solid fa-angles-down"></i>
+            </button>
 
             <ActionBlock 
                 editHandler = { editHandler }

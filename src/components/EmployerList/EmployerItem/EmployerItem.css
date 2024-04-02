@@ -40,7 +40,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 5;
+    z-index: 10;
 
     transform: translate(-50%, -50%);
 }
@@ -58,3 +58,25 @@
   
 /* .employer-item__btn_edit {}
 .employer-item__btn_del {} */
+
+.expand-info-btn {
+    position: absolute;
+    top: 50%;
+    left: 93.5%;
+
+    color: black;
+    border: none;
+
+    transform: translateY(-50%);
+    transition: all .3s;
+}
+
+.expand-info-btn:hover {
+    color: silver;
+
+    z-index: 5;
+}
+
+.expand-info-btn:disabled {
+    pointer-events: none;
+}

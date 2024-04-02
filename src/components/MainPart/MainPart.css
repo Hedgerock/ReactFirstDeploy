@@ -33,6 +33,10 @@
     overflow: auto;
 }
 
+.main-part_modified {
+    overflow: hidden;
+}
+
 .container {
     width: 100%;
     padding: 0 2rem;
