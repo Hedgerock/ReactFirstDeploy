@@ -107,7 +107,7 @@ const employees = [
         jobRank: 'Senior',
         picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Queen_Elizabeth_II_of_New_Zealand_%28cropped%29.jpg/1200px-Queen_Elizabeth_II_of_New_Zealand_%28cropped%29.jpg',
         startDay: '26.05.2021',
-        dateBirth: '10.04.1998',
+        dateBirth: '29.10.1932',
         phoneNumber: '380991112233',
         active: false 
     },

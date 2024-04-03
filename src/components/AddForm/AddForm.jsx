@@ -30,8 +30,14 @@ export const AddForm = (props) => {
                             inputs.map((item, index) => {
                             return <CurInput key = { index } data = { item } obj = { employer }/>})
                         }
-                        <button onClick = { addHandler }>Return</button>
-                        <button onClick = { addNewEmployer }>Add new employee</button>
+                        <div className="bottom-box">
+                            <button onClick = { addHandler }>Return</button>
+                            <button onClick = { addNewEmployer }>Add new employee</button>
+                            <div className="fields">
+                                <div className="fields__item fields__item_required"></div>
+                                <div className="fields__item fields__item_optional"></div>
+                            </div>
+                        </div>
                     </div>
                 }
             </div>

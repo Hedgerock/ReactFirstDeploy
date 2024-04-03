@@ -119,3 +119,65 @@
 .email-box span {
     padding-left: 1.5rem;
 }
+
+.bottom-box {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 2.5rem;
+}
+
+.bottom-box button {
+    margin: 0;
+}
+
+.fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 250px;
+    height: 43px;
+
+    border: 1px solid;
+    border-radius: .6rem;
+    margin-left: auto;
+}
+
+.fields__item {
+    width: 25px;
+    height: 25px;
+
+    position: relative;
+}
+
+.fields__item_required {
+    background: #584646;
+}
+
+.fields__item_required::before {
+    content: 'Required fields'
+}
+
+.fields__item_optional {
+    background: gray;
+}
+
+.fields__item_optional::before {
+    content: 'Optional fields'
+}
+
+.fields__item::before {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+
+    width: 60px;
+
+    transform: translateY(-50%);
+
+    font-size: .7rem;
+
+    text-align: center;
+}
