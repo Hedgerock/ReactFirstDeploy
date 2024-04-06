@@ -2,13 +2,19 @@ import './AddForm.css';
 import { inputs } from './inputs';
 import { CurInput } from './CurInput';
 import { employer, isFormValid } from './formElAndValidation';
+import { url } from '../../employees';
 
 export const AddForm = (props) => {
-    const { addEmployer, setNewUser, newUser, setExpandInfo } = props;
+    const { setNewUser, newUser, setExpandInfo, setChange } = props;
 
     const addHandler = () => {
         setNewUser(prev => !prev)
         setExpandInfo(false);
+    }
+
+    const confirmAdding = () => {
+        setChange(prev => !prev);
+        window.location.reload();
     }
 
     const addNewEmployer = (e) => {
@@ -17,8 +23,16 @@ export const AddForm = (props) => {
             console.warn('Some fields are empty')
             return
         }
-        addEmployer(employer);
-        window.location.reload();
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(employer)
+        })
+            .then((response) => {
+                response.ok ? confirmAdding() : console.error('Error in updating process');
+            })
     }
 
     return (

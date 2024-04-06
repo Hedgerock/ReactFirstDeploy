@@ -6,11 +6,11 @@ export const InfoBlockElement = (props) => {
 
     return (
         !changeInfo  
-            ? <span className={ `employer-item__info employer-item__info_${ currentClassName }` }>{ prevValue }</span>
+            ? <span className={ `employer-item__info employer-item__info_${ currentClassName }` }>{ newValue || prevValue }</span>
             : <ChangeInput 
                 setFunction = { newSet } 
                 classForInp = { currentClassName } 
-                newValue = { newValue } 
+                newValue = { newValue || prevValue } 
                 placeholder = { placeholder || '' }
             />
     )

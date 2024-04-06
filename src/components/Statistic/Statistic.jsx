@@ -3,7 +3,7 @@ import { Counter } from "./Counter";
 import './Statistic.css'
 
 export const Statistic = (props) => {
-    const { addEmployer, data, setNewUser, newUser, setExpandInfo } = props
+    const { addEmployer, data, setNewUser, newUser, setExpandInfo, setChange } = props
     const employeesListLength = data.length;
     const activeEmployees = data.filter(item => item.active).length
     const deactivatedEmployees = data.filter(item => !item.active).length
@@ -25,6 +25,7 @@ export const Statistic = (props) => {
                 setNewUser = { setNewUser } 
                 newUser = { newUser }
                 setExpandInfo = { setExpandInfo }
+                setChange = { setChange }
             />
         </div>
     )

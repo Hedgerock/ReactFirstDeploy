@@ -4,11 +4,11 @@ import { EmployerItem } from './EmployerItem';
 import { ExpandInfo } from './ExpandInfo';
 
 export const EmployerList = (props) => {
-    const { data, deleteEmployer, editEmployer, changeEmployeeStatus, expandInfoUseState } = props
+    const { data, editEmployer, expandInfoUseState, setChange } = props
     const { expandInfo, setExpandInfo } = expandInfoUseState
     const [ currentId, setCurrentId ] = useState(0);
 
-    const functions = { deleteEmployer, editEmployer, changeEmployeeStatus }
+    const functions = { editEmployer }
     const useStateFunc = { setExpandInfo, setCurrentId };
     const useStateValues = { currentId }
 
@@ -22,6 +22,7 @@ export const EmployerList = (props) => {
                     key={ item.id }
                     functions = { functions }
                     useStateFunc = { useStateFunc }
+                    setChange = { setChange }
                 />)
                 : <ExpandInfo 
                     data = { data }

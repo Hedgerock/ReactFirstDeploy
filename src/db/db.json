@@ -1,0 +1,191 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Mohamed",
+      "middleName": "",
+      "surname": "Ali",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 15000,
+      "currency": "uah",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Junior",
+      "picture": "https://www.shutterstock.com/image-photo/portrait-laughing-man-indian-origin-260nw-604765532.jpg",
+      "startDay": "13.02.2022",
+      "dateBirth": "10.04.1995",
+      "phoneNumber": "380953334455",
+      "active": true
+    },
+    {
+      "id": "2",
+      "name": "Sebastian",
+      "middleName": "Tochilkovich",
+      "surname": "Shmaghenvagen",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 1200,
+      "currency": "usd",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Junior",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn1aEkMp4B80dnei_vuIgRHd50FCQMmzcVZq58bebuHw&s",
+      "startDay": "26.07.2019",
+      "dateBirth": "26.04.2004",
+      "phoneNumber": "380953334455",
+      "active": false
+    },
+    {
+      "id": "4",
+      "name": "Joe",
+      "middleName": "",
+      "surname": "Biden",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 11000,
+      "currency": "usd",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Senior",
+      "picture": "https://www.whitehouse.gov/wp-content/uploads/2021/04/P20210303AS-1901-cropped.jpg?w=1536",
+      "startDay": "13.05.2022",
+      "dateBirth": "12.04.1949",
+      "phoneNumber": "380953334455",
+      "active": false
+    },
+    {
+      "id": "5",
+      "name": "Evgeniy",
+      "middleName": "Nikolayevich",
+      "surname": "Ponasenkov",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 2500,
+      "currency": "usd",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Middle",
+      "picture": "https://icdn.lenta.ru/images/2022/04/01/22/20220401222222084/square_1280_096d87376c05e6b492272b7d173bd2a2.jpeg",
+      "startDay": "26.05.2021",
+      "dateBirth": "10.04.1998",
+      "phoneNumber": "380953334455",
+      "active": false
+    },
+    {
+      "id": "6",
+      "name": "Angela",
+      "middleName": "dasdasd",
+      "surname": "Merkel",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 2000,
+      "currency": "eur",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Middle",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Angela_Merkel_2019_cropped.jpg/800px-Angela_Merkel_2019_cropped.jpg",
+      "startDay": "26.05.2021",
+      "dateBirth": "10.04.1975",
+      "phoneNumber": "380953334455",
+      "active": true
+    },
+    {
+      "id": "7",
+      "name": "Elizabeth",
+      "middleName": "Second",
+      "surname": "Monarch",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 6700,
+      "currency": "gbp",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Senior",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Queen_Elizabeth_II_of_New_Zealand_%28cropped%29.jpg/1200px-Queen_Elizabeth_II_of_New_Zealand_%28cropped%29.jpg",
+      "startDay": "26.05.2021",
+      "dateBirth": "29.10.1932",
+      "phoneNumber": "380991112233",
+      "active": true
+    },
+    {
+      "id": "8",
+      "name": "Dmitro",
+      "middleName": "Serhiyovich",
+      "surname": "Vasyliev",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 12000,
+      "currency": "usd",
+      "jobTitle": "Team Lead",
+      "jobRank": "",
+      "picture": "https://i.work.ua/sent_photo/8/e/a/8ea13bec45903a8a48bcce5aba69ddb0.jpg",
+      "startDay": "26.05.2021",
+      "dateBirth": "06.05.1999",
+      "phoneNumber": "380991112233",
+      "active": true
+    },
+    {
+      "id": "9",
+      "name": "Larisa",
+      "middleName": "Petrovna",
+      "surname": "Krigina",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 1100,
+      "currency": "usd",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Junior",
+      "picture": "https://src.kleos.ru/file/specialist/2019/10/2/photo_nddhy.jpg",
+      "startDay": "26.05.2021",
+      "dateBirth": "10.04.1998",
+      "phoneNumber": "380991112233",
+      "active": true
+    },
+    {
+      "id": "10",
+      "name": "Vladislav",
+      "middleName": "",
+      "surname": "Sinotov",
+      "email": [
+        "testemail@gmail.com",
+        "testemail2@gmail.com"
+      ],
+      "salary": 1100,
+      "currency": "usd",
+      "jobTitle": "Frontend developer",
+      "jobRank": "Junior",
+      "picture": "https://virtus-img.cdnvideo.ru/images/details-photo/plain/0d/0d758cf4f224325145b3267cd57f2852.jpg@jpg",
+      "startDay": "26.05.2021",
+      "dateBirth": "07.07.1997",
+      "phoneNumber": "380991112233",
+      "active": false
+    },
+    {
+      "id": "e2c6",
+      "name": "32132133",
+      "middleName": "",
+      "surname": "3123213213",
+      "email": [],
+      "salary": "213213",
+      "currency": "21312321",
+      "jobTitle": "213123",
+      "jobRank": "321321312",
+      "picture": "",
+      "startDay": "06.04.2024",
+      "dateBirth": "21.02.2001",
+      "phoneNumber": "3123213",
+      "active": true
+    }
+  ]
+}

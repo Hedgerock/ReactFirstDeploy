@@ -18,7 +18,8 @@ export const InfoBlock = (props) => {
                         newValue: newSurname, 
                         changeInfo, 
                         currentClassName: 'surname',
-                        prevValue: surname
+                        prevValue: surname,
+                        placeholder: 'Surname'
                     } 
                 }
             />
@@ -29,7 +30,8 @@ export const InfoBlock = (props) => {
                         newValue: newName, 
                         changeInfo, 
                         currentClassName: 'name',
-                        prevValue: name
+                        prevValue: name,
+                        placeholder: 'Name'
                     } 
                 }
             />
@@ -42,7 +44,7 @@ export const InfoBlock = (props) => {
                         changeInfo, 
                         currentClassName: 'middleName',
                         prevValue: middleName,
-                        placeholder: 'Middle name(optional)'
+                        placeholder: 'Middle name'
                     } 
                 }
             />

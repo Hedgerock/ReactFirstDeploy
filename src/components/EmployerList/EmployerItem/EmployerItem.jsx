@@ -3,13 +3,12 @@ import './EmployerItem.css';
 import { EmployerLabel } from '../EmployerLabel';
 import { InfoBlock } from '../InfoBlock';
 import { ActionBlock } from '../ActionBlock';
-import { setInputsValues } from './setInputsValues';
 
 export const EmployerItem = (props) => {
-    const { data, functions, number, useStateFunc } = props
+    const { data, functions, number, useStateFunc, setChange } = props
     const { id } = data
 
-    const { deleteEmployer, editEmployer, changeEmployeeStatus } = functions
+    const { editEmployer } = functions
     const { setExpandInfo, setCurrentId } = useStateFunc
 
     const numberVal = number + 1;
@@ -25,12 +24,12 @@ export const EmployerItem = (props) => {
     const newSets = { setNewName, setNewMiddleName, setNewSurname, editEmployer };
 
     const initDelete = () => {
-        deleteEmployer(id);
+        setChange(prev => !prev);
     }
 
     const initDeactivation = () => {
         setDiactivateUser(prev => !prev)
-        changeEmployeeStatus( id, deactivateUser )
+        setChange(prev => !prev);
     }
 
     const initExpandInfo = () => {
@@ -39,8 +38,8 @@ export const EmployerItem = (props) => {
     }
 
     const editHandler = () => {
-        setInputsValues({ newValues, newSets, data });
         setchangeInfo(prev => !prev);
+        setChange(prev => !prev);
     }
 
 
@@ -57,7 +56,9 @@ export const EmployerItem = (props) => {
             { !changeInfo &&
                 <EmployerLabel
                     initDeactivation = { initDeactivation } 
-                    deactivateUser = { deactivateUser } 
+                    deactivateUser = { deactivateUser }
+                    setDiactivateUser = { setDiactivateUser }
+                    data = { data }
                 />
             }
             <span className="employer-item__number">{`${numberVal}.`}</span>
@@ -82,6 +83,9 @@ export const EmployerItem = (props) => {
                 deactivateUser = { deactivateUser }
                 initDelete = { initDelete }
                 changeInfo = { changeInfo }
+                setchangeInfo = { setchangeInfo }
+                data = { data }
+                values = { { newValues, newSets } }
             />
         </li>
     )
