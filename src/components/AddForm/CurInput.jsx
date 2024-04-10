@@ -2,7 +2,7 @@ import { useState } from "react";
 import { dateStyle, strManipulation, toCamelCase } from "../../utils/stringFunc";
 
 export const CurInput = (props) => {
-    const { data, obj } = props
+    const { data, setNewEmployer } = props
     const { type, title } = data
 
     const [ newVal, setNewVal ] = useState('');
@@ -22,8 +22,8 @@ export const CurInput = (props) => {
                 }
 
                 type === 'email'
-                 ? obj[ forObj ][0] = val
-                 : obj[ forObj ] = val
+                 ? setNewEmployer(prevVal => ({ ...prevVal, [forObj]: [val]}))
+                 : setNewEmployer(prevVal => ({ ...prevVal, [forObj]: val}))
             } }
             type={ type }
             value={ newVal }

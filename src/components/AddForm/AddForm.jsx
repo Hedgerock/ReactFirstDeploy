@@ -5,7 +5,7 @@ import { employer, isFormValid } from './formElAndValidation';
 import { url } from '../../employees';
 
 export const AddForm = (props) => {
-    const { setNewUser, newUser, setExpandInfo, setChange } = props;
+    const { setNewUser, newUser, setExpandInfo, setChange, newEmployer, setNewEmployer } = props;
 
     const addHandler = () => {
         setNewUser(prev => !prev)
@@ -14,12 +14,13 @@ export const AddForm = (props) => {
 
     const confirmAdding = () => {
         setChange(prev => !prev);
-        window.location.reload();
+        setNewUser(prev => !prev);
+        setNewEmployer(employer);
     }
 
     const addNewEmployer = (e) => {
         e.preventDefault();
-        if (!isFormValid()) {
+        if (!isFormValid(newEmployer)) {
             console.warn('Some fields are empty')
             return
         }
@@ -28,7 +29,7 @@ export const AddForm = (props) => {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(employer)
+            body: JSON.stringify(newEmployer)
         })
             .then((response) => {
                 response.ok ? confirmAdding() : console.error('Error in updating process');
@@ -42,7 +43,7 @@ export const AddForm = (props) => {
                     <div className='new-user'>
                         {
                             inputs.map((item, index) => {
-                            return <CurInput key = { index } data = { item } obj = { employer }/>})
+                            return <CurInput key = { index } data = { item } setNewEmployer = { setNewEmployer }/>})
                         }
                         <div className="bottom-box">
                             <button onClick = { addHandler }>Return</button>

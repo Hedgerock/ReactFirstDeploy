@@ -19,7 +19,7 @@ export const employer = {
     active: true
 }
 
-export const isFormValid = () => {
+export const isFormValid = (employer) => {
     return (
         employer.name &&
         employer.surname &&
