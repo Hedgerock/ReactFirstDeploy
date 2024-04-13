@@ -3,6 +3,7 @@ import { EmailInfo } from './EmailInfo'
 import './ExpandInfo.css'
 import { Photo } from './Photo'
 import { calculateAge } from '../../../utils/calculateAge'
+import { dateStyle } from '../../../utils/stringFunc'
 
 export const ExpandInfo = (props) => {
     const { data, useStateValues, useStateFunc } = props
@@ -20,7 +21,8 @@ export const ExpandInfo = (props) => {
         setExpandInfo(prev => !prev)
     }
 
-    const age = calculateAge(dateBirth);
+    const birthday = dateStyle(dateBirth)
+    const age = calculateAge(birthday);
 
     return (
         <li className="expand-info">
@@ -44,7 +46,7 @@ export const ExpandInfo = (props) => {
                         </div>
                         <div className="employees-info__value">
                             <h4>Date of birth:</h4>
-                            <span>{ dateBirth } ({ age } y.o)</span>
+                            <span>{ birthday } ({ age } y.o)</span>
                         </div>
                         <div className="employees-info__value">
                             <h4>Phone number:</h4>

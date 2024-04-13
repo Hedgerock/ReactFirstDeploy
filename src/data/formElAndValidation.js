@@ -1,5 +1,5 @@
-import { getCurrentDate } from "../../utils/getCurrentDate";
-import { dateStyle } from "../../utils/stringFunc";
+import { getCurrentDate } from "../utils/getCurrentDate";
+import { dateStyle } from "../utils/stringFunc";
 
 const curDate = dateStyle(getCurrentDate());
 
@@ -7,7 +7,7 @@ export const employer = {
     name: '', 
     middleName: '', 
     surname: '',
-    email: [],
+    email: '',
     salary: 0,
     currency: '',
     jobTitle: '',

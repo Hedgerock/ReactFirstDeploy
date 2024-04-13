@@ -1,5 +1,5 @@
 import './EmployerLabel.css';
-import { url } from '../../../employees';
+import { url } from '../../../data/employees';
 
 export const EmployerLabel = (props) => {
     const { initDeactivation, deactivateUser, data } = props;

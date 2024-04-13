@@ -1,39 +1,14 @@
 import './AddForm.css';
 import { inputs } from './inputs';
 import { CurInput } from './CurInput';
-import { employer, isFormValid } from './formElAndValidation';
-import { url } from '../../employees';
+import { addNewEmployee } from '../../API/addNewEmployee';
 
 export const AddForm = (props) => {
-    const { setNewUser, newUser, setExpandInfo, setChange, newEmployer, setNewEmployer } = props;
+    const { setNewUser, newUser, setExpandInfo, setNewEmployee, newEmployee, setChange } = props;
 
     const addHandler = () => {
         setNewUser(prev => !prev)
         setExpandInfo(false);
-    }
-
-    const confirmAdding = () => {
-        setChange(prev => !prev);
-        setNewUser(prev => !prev);
-        setNewEmployer(employer);
-    }
-
-    const addNewEmployer = (e) => {
-        e.preventDefault();
-        if (!isFormValid(newEmployer)) {
-            console.warn('Some fields are empty')
-            return
-        }
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(newEmployer)
-        })
-            .then((response) => {
-                response.ok ? confirmAdding() : console.error('Error in updating process');
-            })
     }
 
     return (
@@ -43,11 +18,15 @@ export const AddForm = (props) => {
                     <div className='new-user'>
                         {
                             inputs.map((item, index) => {
-                            return <CurInput key = { index } data = { item } setNewEmployer = { setNewEmployer }/>})
+                            return <CurInput key = { index } data = { item } setNewEmployee = { setNewEmployee } newEmployee = { newEmployee } />})
                         }
                         <div className="bottom-box">
                             <button onClick = { addHandler }>Return</button>
-                            <button onClick = { addNewEmployer }>Add new employee</button>
+                            <button 
+                                onClick = { () => addNewEmployee({ setChange, setNewUser, setNewEmployee, newEmployee }) }
+                            >
+                                Add new employee
+                            </button>
                             <div className="fields">
                                 <div className="fields__item fields__item_required"></div>
                                 <div className="fields__item fields__item_optional"></div>

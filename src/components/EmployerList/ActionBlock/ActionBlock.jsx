@@ -1,44 +1,18 @@
-import { url } from '../../../employees'
+import { makeDelete } from '../../../API/deleteEmployee'
+import { makeEdit } from '../../../API/editEmployee'
 import './ActionBlock.css'
 
 export const ActionBlock = (props) => {
     const { editHandler, deactivateUser, initDelete, changeInfo, data, values, setchangeInfo } = props
-    const { id } = data
     const { newValues } = values
-    const { newName, newMiddleName, newSurname } = newValues
-
-    const makeDelete = () => {
-        fetch(`${url}/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-        .then((response) => {
-            response.ok ? initDelete() : console.error('Error in updating process');
-        })
-    }
-
-    const makeEdit = () => {
-        fetch(`${url}/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({ 
-                name: newName || data.name, 
-                middleName: newMiddleName || data.middleName, 
-                surname: newSurname || data.surname })
-        })
-        .then((response) => {
-            response.ok ? editHandler() : console.error('Error in updating process');
-        })
-    }
 
     return (
         <div className="employer-item__action-block">
             <button 
-                onClick={ changeInfo ? makeEdit : (() => setchangeInfo(prev => !prev)) } 
+                onClick={ changeInfo 
+                    ? (() => makeEdit ({ data, func: editHandler, newValues })) 
+                    : (() => setchangeInfo(prev => !prev)) 
+                } 
                 className="employer-item__btn employer-item__btn_edit"
                 disabled = { !deactivateUser }
             >
@@ -48,7 +22,7 @@ export const ActionBlock = (props) => {
                 }
             </button>
             <button 
-                onClick={ makeDelete } 
+                onClick={ () => makeDelete(data, initDelete) } 
                 className="employer-item__btn employer-item__btn_del"
                 title = "Delete employee"
                 disabled = { !deactivateUser }

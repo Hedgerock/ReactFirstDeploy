@@ -1,25 +1,6 @@
 {
   "employees": [
     {
-      "id": "1",
-      "name": "Mohamed",
-      "middleName": "asdasd",
-      "surname": "Ali",
-      "email": [
-        "testemail@gmail.com",
-        "testemail2@gmail.com"
-      ],
-      "salary": 15000,
-      "currency": "uah",
-      "jobTitle": "Frontend developer",
-      "jobRank": "Junior",
-      "picture": "https://www.shutterstock.com/image-photo/portrait-laughing-man-indian-origin-260nw-604765532.jpg",
-      "startDay": "13.02.2022",
-      "dateBirth": "10.04.1995",
-      "phoneNumber": "380953334455",
-      "active": true
-    },
-    {
       "id": "2",
       "name": "Sebastian",
       "middleName": "Tochilkovich",
@@ -172,35 +153,19 @@
       "active": true
     },
     {
-      "id": "e2c6",
-      "name": "32132133",
-      "middleName": "",
-      "surname": "3123213213",
-      "email": [],
-      "salary": "213213",
-      "currency": "21312321",
-      "jobTitle": "213123",
-      "jobRank": "321321312",
+      "id": "3cb6",
+      "name": "Test",
+      "middleName": "Ivanovich",
+      "surname": "User",
+      "email": "",
+      "salary": "1250",
+      "currency": "usd",
+      "jobTitle": "Content maker",
+      "jobRank": "Senior",
       "picture": "",
-      "startDay": "06.04.2024",
-      "dateBirth": "21.02.2001",
-      "phoneNumber": "3123213",
-      "active": true
-    },
-    {
-      "id": "d791",
-      "name": "wqeqwe",
-      "middleName": "",
-      "surname": "qweqwewq",
-      "email": [],
-      "salary": "213",
-      "currency": "3213213",
-      "jobTitle": "123213213",
-      "jobRank": "213213213",
-      "picture": "",
-      "startDay": "10.04.2024",
-      "dateBirth": "10.01.2007",
-      "phoneNumber": "213213",
+      "startDay": "13.04.2024",
+      "dateBirth": "1996-03-23",
+      "phoneNumber": "3801112233",
       "active": true
     }
   ]

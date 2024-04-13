@@ -1,22 +1,14 @@
 import './MainPart.css'
 import { EmployerList } from '../EmployerList';
-import { useEffect, useState } from 'react';
-import { url } from '../../employees';
+import { useState } from 'react';
 import { Statistic } from '../Statistic';
-import { employer } from '../AddForm/formElAndValidation';
+import { useGetEmployerList } from '../../hooks/useGetEmployerList';
+import { useCreateNewEmployee } from '../../hooks/useCreateNewEmployee';
 
 export const MainPart = () => {
-    const [ employerList, setEmpList ] = useState([]);
-    const [ newUser, setNewUser ] = useState(false);
+    const { employerList, setChange } = useGetEmployerList();
+    const { newUser, newEmployee, setNewUser, setNewEmployee } = useCreateNewEmployee()
     const [ expandInfo, setExpandInfo ] = useState(false);
-    const [ change, setChange ] = useState(false);
-    const [ newEmployer, setNewEmployer ] = useState(employer);
-
-    useEffect(() => {
-        fetch(url)
-            .then(response => response.json())
-            .then(json => setEmpList(json))
-    }, [setEmpList, change]);
 
     return (
         <div className="main-box">
@@ -31,8 +23,8 @@ export const MainPart = () => {
                                 newUser = { newUser }
                                 setExpandInfo = { setExpandInfo }
                                 setChange = { setChange }
-                                newEmployer = { newEmployer }
-                                setNewEmployer = { setNewEmployer }
+                                newEmployee = { newEmployee }
+                                setNewEmployee  = { setNewEmployee }
                             />
                             <div className="employer-list-block">
                                 <EmployerList 

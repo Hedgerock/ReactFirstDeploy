@@ -1,9 +1,9 @@
-import menu from "../../data"
 import "./MenuSetUp.css";
 import { MenuEl } from "./MenuEl";
-import { Logo } from "../Logo/Logo";
-import { CloseBtn } from "../CloseBtn/CloseBtn";
-import { Layout } from "../Layout/Layout";
+import menu from "../../data/menu";
+import { Layout } from "../Layout";
+import { Logo } from "../Logo";
+import { CloseBtn } from "../CloseBtn";
 
 export const MenuSetUp = (props) => {
     const { func } = props
